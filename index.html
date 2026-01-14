@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { 
-            background: #0d0d0d; 
+            background: #050505; 
             color: white; 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
+            font-family: 'Segoe UI', sans-serif; 
             margin: 0;
             padding: 20px;
             display: flex;
@@ -18,22 +18,23 @@
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         h2 { 
             font-weight: 300; 
-            letter-spacing: 3px; 
+            letter-spacing: 4px; 
             color: #0af;
-            text-shadow: 0 0 15px rgba(0,170,255,0.6);
-            margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(0,170,255,0.6);
+            margin: 0;
         }
 
+        /* Contenedor principal de la cuadrícula */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columnas para móvil */
-            gap: 20px;
-            max-width: 500px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 450px;
             width: 100%;
         }
 
@@ -41,57 +42,55 @@
             .grid-container { grid-template-columns: repeat(4, 1fr); }
         }
 
+        /* Estilo de los accesos directos */
         .app-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: #ccc;
-            transition: all 0.3s ease;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .app-card:active { transform: scale(0.9); }
+        .app-card:active {
+            transform: scale(0.85);
+        }
 
+        /* Estenedor del icono con efecto de cristal */
         .icon-box {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: #1a1a1a;
+            width: 75px;
+            height: 75px;
+            border-radius: 18px;
+            background: #151515;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 10px;
-            border: 2px solid #333;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            font-weight: bold;
-            font-size: 11px;
-            text-align: center;
-            position: relative;
+            border: 1px solid #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             overflow: hidden;
+            position: relative;
         }
 
-        /* Colores específicos para cada marca */
-        .vix { border-color: #ff5a00; color: #ff5a00; }
-        .netflix { border-color: #e50914; color: #e50914; }
-        .tinder { border-color: #fe3c72; color: #fe3c72; }
-        .disney { border-color: #0063e5; color: #0063e5; }
-        .hbo { border-color: #9933ff; color: #9933ff; }
-        .canva { border-color: #00c4cc; color: #00c4cc; }
-        .utility { border-color: #0af; color: #0af; }
+        /* Imágenes de los iconos */
+        .icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
+        /* Etiquetas de texto debajo */
         .app-label {
-            font-size: 0.7em;
+            font-size: 0.75em;
+            color: #888;
             letter-spacing: 1px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: bold;
         }
 
-        /* Efecto de brillo táctico */
-        .icon-box::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 50%;
-            background: linear-gradient(rgba(255,255,255,0.1), transparent);
+        /* Brillo táctico en los bordes */
+        .app-card:hover .icon-box {
+            border-color: #0af;
+            box-shadow: 0 0 15px rgba(0,170,255,0.3);
         }
     </style>
 </head>
@@ -99,54 +98,71 @@
 
     <div class="header">
         <h2>COMANDO CENTRAL</h2>
-        <div style="height: 2px; width: 50px; background: #0af; margin: 10px auto;"></div>
+        <p style="color: #444; font-size: 0.8em; margin-top: 10px;">V 2.5 | SISTEMA DE ENLACE</p>
     </div>
 
     <div class="grid-container">
         
         <a href="https://www.netflix.com" class="app-card">
-            <div class="icon-box netflix">NETFLIX</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Netflix-new-icon.png" alt="Netflix">
+            </div>
             <span class="app-label">Netflix</span>
         </a>
 
-        <a href="https://www.vix.com" class="app-card">
-            <div class="icon-box vix">VIX</div>
-            <span class="app-label">Vix</span>
-        </a>
-
         <a href="https://www.disneyplus.com" class="app-card">
-            <div class="icon-box disney">DISNEY+</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" style="background: #001d3d; padding: 10px;" alt="Disney+">
+            </div>
             <span class="app-label">Disney+</span>
         </a>
 
-        <a href="https://www.max.com" class="app-card"> <div class="icon-box hbo">MAX/HBO</div>
+        <a href="https://www.vix.com" class="app-card">
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/ViX_logo.png" style="background: #ff5a00; padding: 10px;" alt="Vix">
+            </div>
+            <span class="app-label">VIX</span>
+        </a>
+
+        <a href="https://www.max.com" class="app-card">
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Max_logo.svg" style="background: #002be7; padding: 15px;" alt="HBO Max">
+            </div>
             <span class="app-label">HBO Max</span>
         </a>
 
         <a href="https://tinder.com" class="app-card">
-            <div class="icon-box tinder">TINDER</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/TinderLogo-2017.svg" style="padding: 15px;" alt="Tinder">
+            </div>
             <span class="app-label">Tinder</span>
         </a>
 
         <a href="https://www.canva.com" class="app-card">
-            <div class="icon-box canva">CANVA</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">
+            </div>
             <span class="app-label">Canva</span>
         </a>
 
         <a href="https://www.youtube.com" class="app-card">
-            <div class="icon-box utility">YOUTUBE</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.svg" style="padding: 15px;" alt="YouTube">
+            </div>
             <span class="app-label">YouTube</span>
         </a>
 
         <a href="https://chat.openai.com" class="app-card">
-            <div class="icon-box utility">CHATGPT</div>
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" style="padding: 12px; background: #74aa9c;" alt="IA">
+            </div>
             <span class="app-label">IA</span>
         </a>
 
     </div>
 
-    <div style="margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; width: 100%; text-align: center;">
-        <a href="https://capacitiumx.github.io/Comando-Central/" style="color: #444; text-decoration: none; font-size: 0.75em; letter-spacing: 2px;">SISTEMA OPERATIVO v2.0</a>
+    <div style="margin-top: 60px;">
+        <a href="https://capacitiumx.github.io/Comando-Central/" style="color: #222; text-decoration: none; font-size: 0.7em; letter-spacing: 2px;">ACCESO RESTRINGIDO</a>
     </div>
 
 </body>
