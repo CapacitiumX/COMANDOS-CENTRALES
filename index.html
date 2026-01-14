@@ -2,120 +2,136 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>COMANDO CENTRAL</title>
-    
-    <link rel="icon" type="image/png" href="data:image/jpeg;base64,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">
-    <link rel="apple-touch-icon" href="data:image/jpeg;base64,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">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>COMANDO CENTRAL - PANEL TÁCTICO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <style>
         body { 
-            background: #111; 
+            background: #0a0a0a; 
             color: white; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            text-align: center; 
-            padding-top: 50px; 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
             margin: 0;
-        }
-        .container {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        img { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 25px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 0 30px rgba(0,170,255,0.4); 
+
+        h2 { 
+            font-weight: 300; 
+            letter-spacing: 2px; 
+            color: #0af;
+            text-shadow: 0 0 10px rgba(0,170,255,0.5);
+        }
+
+        /* Contenedor de la cuadrícula de iconos */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 25px;
+            max-width: 600px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        /* Estilo de cada botón/icono */
+        .app-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .app-card:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
             border: 2px solid #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            overflow: hidden;
         }
-        h2 { font-weight: 300; letter-spacing: 1px; }
-        .loader {
-            border: 4px solid #333;
-            border-top: 4px solid #0af;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+
+        /* Colores temáticos para los nuevos iconos */
+        .vix { border-color: #ff5a00; color: #ff5a00; }
+        .netflix { border-color: #e50914; color: #e50914; }
+        .disney { border-color: #0063e5; color: #0063e5; }
+        .canva { border-color: #00c4cc; color: #00c4cc; }
+        .general { border-color: #0af; color: #0af; }
+
+        .app-label {
+            font-size: 0.75em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        a { color: #0af; text-decoration: none; font-weight: bold; }
-        .status { color: #888; font-size: 0.9em; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="data:image/jpeg;base64,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">
+
+    <h2>COMANDO CENTRAL</h2>
+    <p style="color: #666; font-size: 0.9em;">Seleccione Aplicación de Enlace</p>
+
+    <div class="grid-container">
         
-        <h2>Accediendo a Comando Central...</h2>
-        <div class="loader"></div>
-        <p class="status">Preparando interfaz táctica...</p>
-        
-        <p style="margin-top: 30px; font-size: 0.8em;">
-            Si no eres redirigido en 2 segundos, 
-            <a href="https://capacitiumx.github.io/Comando-Central/">haz clic aquí</a>
-        </p>
+        <a href="https://www.vix.com" class="app-card">
+            <div class="icon-box vix">VIX</div>
+            <span class="app-label">Vix</span>
+        </a>
+
+        <a href="https://www.netflix.com" class="app-card">
+            <div class="icon-box netflix">NETFLIX</div>
+            <span class="app-label">Netflix</span>
+        </a>
+
+        <a href="https://www.disneyplus.com" class="app-card">
+            <div class="icon-box disney">DISNEY+</div>
+            <span class="app-label">Disney+</span>
+        </a>
+
+        <a href="https://www.canva.com" class="app-card">
+            <div class="icon-box canva">CANVA</div>
+            <span class="app-label">Canva</span>
+        </a>
+
+        <a href="https://www.youtube.com" class="app-card">
+            <div class="icon-box general">YT</div>
+            <span class="app-label">YouTube</span>
+        </a>
+
+        <a href="https://chat.openai.com" class="app-card">
+            <div class="icon-box general">GPT</div>
+            <span class="app-label">ChatGPT</span>
+        </a>
+
+        <a href="https://www.spotify.com" class="app-card">
+            <div class="icon-box general">SPOT</div>
+            <span class="app-label">Spotify</span>
+        </a>
+
+        <a href="https://web.whatsapp.com" class="app-card">
+            <div class="icon-box general">WA</div>
+            <span class="app-label">WhatsApp</span>
+        </a>
+
     </div>
 
-    <script>
-        // --- BASE DE DATOS DE REDIRECCIÓN ---
-        const appDatabase = {
-            // Entretenimiento & Streaming
-            "netflix": "https://www.netflix.com",
-            "vix": "https://www.vix.com",
-            "disney": "https://www.disneyplus.com",
-            "disneyplus": "https://www.disneyplus.com",
-            "youtube": "https://www.youtube.com",
-            "twitch": "https://www.twitch.tv",
-            "crunchyroll": "https://www.crunchyroll.com",
-            "primevideo": "https://www.primevideo.com",
-            
-            // Redes Sociales
-            "tinder": "https://tinder.com",
-            "facebook": "https://www.facebook.com",
-            "instagram": "https://www.instagram.com",
-            "tiktok": "https://www.tiktok.com",
-            "twitter": "https://twitter.com",
-            "x": "https://twitter.com",
-            
-            // Herramientas & Diseño
-            "canva": "https://www.canva.com",
-            "chatgpt": "https://chat.openai.com",
-            "google": "https://www.google.com",
-            "gmail": "https://mail.google.com",
-            "drive": "https://drive.google.com",
-            
-            // Música
-            "spotify": "https://open.spotify.com",
-            "shazam": "https://www.shazam.com",
-            
-            // Mensajería
-            "whatsapp": "https://web.whatsapp.com",
-            "telegram": "https://web.telegram.org"
-        };
+    <div style="margin-top: 50px;">
+        <a href="https://capacitiumx.github.io/Comando-Central/" style="color: #0af; text-decoration: none; font-size: 0.8em;">← VOLVER AL INICIO</a>
+    </div>
 
-        // --- LÓGICA DE DETECCIÓN Y REDIRECCIÓN ---
-        function executeRedirect() {
-            // Obtenemos parámetros de la URL (ej: ?app=vix)
-            const urlParams = new URLSearchParams(window.location.search);
-            const targetApp = urlParams.get('app')?.toLowerCase().replace(/\s+/g, '');
-            
-            let finalDestination = "https://capacitiumx.github.io/Comando-Central/";
-
-            // Si hay una app válida en la base de datos
-            if (targetApp && appDatabase[targetApp]) {
-                finalDestination = appDatabase[targetApp];
-                document.querySelector('h2').innerText = "Abriendo " + targetApp.toUpperCase() + "...";
-            }
-
-            // Redirección con retraso visual
-            setTimeout(() => {
-                window.location.href = finalDestination;
-            }, 1200);
-        }
-
-        window.onload = executeRedirect;
-    </script>
 </body>
 </html>
