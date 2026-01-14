@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { 
-            background: #0a0a0a; 
+            background: #0d0d0d; 
             color: white; 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
             margin: 0;
             padding: 20px;
             display: flex;
@@ -16,90 +16,116 @@
             align-items: center;
         }
 
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         h2 { 
             font-weight: 300; 
-            letter-spacing: 2px; 
+            letter-spacing: 3px; 
             color: #0af;
-            text-shadow: 0 0 10px rgba(0,170,255,0.5);
+            text-shadow: 0 0 15px rgba(0,170,255,0.6);
+            margin-bottom: 5px;
         }
 
-        /* Contenedor de la cuadrícula de iconos */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 25px;
-            max-width: 600px;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas para móvil */
+            gap: 20px;
+            max-width: 500px;
             width: 100%;
-            margin-top: 30px;
         }
 
-        /* Estilo de cada botón/icono */
+        @media (min-width: 600px) {
+            .grid-container { grid-template-columns: repeat(4, 1fr); }
+        }
+
         .app-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: white;
-            transition: transform 0.2s, filter 0.2s;
+            color: #ccc;
+            transition: all 0.3s ease;
         }
 
-        .app-card:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
+        .app-card:active { transform: scale(0.9); }
 
         .icon-box {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
-            background: #222;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             border: 2px solid #333;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
             font-weight: bold;
-            font-size: 12px;
+            font-size: 11px;
             text-align: center;
+            position: relative;
             overflow: hidden;
         }
 
-        /* Colores temáticos para los nuevos iconos */
+        /* Colores específicos para cada marca */
         .vix { border-color: #ff5a00; color: #ff5a00; }
         .netflix { border-color: #e50914; color: #e50914; }
+        .tinder { border-color: #fe3c72; color: #fe3c72; }
         .disney { border-color: #0063e5; color: #0063e5; }
+        .hbo { border-color: #9933ff; color: #9933ff; }
         .canva { border-color: #00c4cc; color: #00c4cc; }
-        .general { border-color: #0af; color: #0af; }
+        .utility { border-color: #0af; color: #0af; }
 
         .app-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             letter-spacing: 1px;
             text-transform: uppercase;
-            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        /* Efecto de brillo táctico */
+        .icon-box::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 50%;
+            background: linear-gradient(rgba(255,255,255,0.1), transparent);
         }
     </style>
 </head>
 <body>
 
-    <h2>COMANDO CENTRAL</h2>
-    <p style="color: #666; font-size: 0.9em;">Seleccione Aplicación de Enlace</p>
+    <div class="header">
+        <h2>COMANDO CENTRAL</h2>
+        <div style="height: 2px; width: 50px; background: #0af; margin: 10px auto;"></div>
+    </div>
 
     <div class="grid-container">
         
-        <a href="https://www.vix.com" class="app-card">
-            <div class="icon-box vix">VIX</div>
-            <span class="app-label">Vix</span>
-        </a>
-
         <a href="https://www.netflix.com" class="app-card">
             <div class="icon-box netflix">NETFLIX</div>
             <span class="app-label">Netflix</span>
         </a>
 
+        <a href="https://www.vix.com" class="app-card">
+            <div class="icon-box vix">VIX</div>
+            <span class="app-label">Vix</span>
+        </a>
+
         <a href="https://www.disneyplus.com" class="app-card">
             <div class="icon-box disney">DISNEY+</div>
             <span class="app-label">Disney+</span>
+        </a>
+
+        <a href="https://www.max.com" class="app-card"> <div class="icon-box hbo">MAX/HBO</div>
+            <span class="app-label">HBO Max</span>
+        </a>
+
+        <a href="https://tinder.com" class="app-card">
+            <div class="icon-box tinder">TINDER</div>
+            <span class="app-label">Tinder</span>
         </a>
 
         <a href="https://www.canva.com" class="app-card">
@@ -108,29 +134,19 @@
         </a>
 
         <a href="https://www.youtube.com" class="app-card">
-            <div class="icon-box general">YT</div>
+            <div class="icon-box utility">YOUTUBE</div>
             <span class="app-label">YouTube</span>
         </a>
 
         <a href="https://chat.openai.com" class="app-card">
-            <div class="icon-box general">GPT</div>
-            <span class="app-label">ChatGPT</span>
-        </a>
-
-        <a href="https://www.spotify.com" class="app-card">
-            <div class="icon-box general">SPOT</div>
-            <span class="app-label">Spotify</span>
-        </a>
-
-        <a href="https://web.whatsapp.com" class="app-card">
-            <div class="icon-box general">WA</div>
-            <span class="app-label">WhatsApp</span>
+            <div class="icon-box utility">CHATGPT</div>
+            <span class="app-label">IA</span>
         </a>
 
     </div>
 
-    <div style="margin-top: 50px;">
-        <a href="https://capacitiumx.github.io/Comando-Central/" style="color: #0af; text-decoration: none; font-size: 0.8em;">← VOLVER AL INICIO</a>
+    <div style="margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; width: 100%; text-align: center;">
+        <a href="https://capacitiumx.github.io/Comando-Central/" style="color: #444; text-decoration: none; font-size: 0.75em; letter-spacing: 2px;">SISTEMA OPERATIVO v2.0</a>
     </div>
 
 </body>
